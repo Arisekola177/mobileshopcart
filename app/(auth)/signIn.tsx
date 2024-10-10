@@ -44,7 +44,7 @@ const SignIn = () => {
   }
   return (
     <ScrollView className="flex-1 bg-white">
-        <View className="relative w-full h-[100px]">
+        <View className="relative w-full flex items-center justify-center h-[200px] ">
           <Text className="text-3xl text-black font-JakartaExtraBold absolute bottom-5 left-5">
             Welcome Back!
           </Text>

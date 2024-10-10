@@ -35,9 +35,25 @@ import shopping from "@/assets/images/shooping.png";
 import deal from "@/assets/images/deal of the day.png";
 import kutan from "@/assets/images/woman kutan.png";
 import footwear from "@/assets/images/footwear.png"
-
-
-
+import offer from "@/assets/images/offer.png"
+import offerImage from "@/assets/images/offerimage.png"
+import mac from "@/assets/images/mac.png"
+import deal2 from "@/assets/images/deal2.png"
+import watch from "@/assets/images/watch.png"
+import sneaker from "@/assets/images/sneaker.png"
+import navy from "@/assets/images/navy.png"
+import slidearrow from "@/assets/icons/slidearrow.png";
+import hot from "@/assets/images/hot sales.png"
+import discount from "@/assets/images/discount.png"
+import heels from "@/assets/images/heels.png"
+import clock from "@/assets/icons/clock.png";
+import calender from "@/assets/icons/calender.png";
+import black  from "@/assets/images/Black Winter.png"
+import mens from "@/assets/images/Mens Starry.png"
+import pink from "@/assets/images/Pink Embroide.png"
+import redsneakers from "@/assets/images/redsneakers.png"
+import camera from "@/assets/images/camera.png"
+import flare from "@/assets/images/Flare Dress.png"
 export const icons = {
     backArrow,
     checkmark,
@@ -58,7 +74,10 @@ export const icons = {
     user,
     vector,
     vector2,
-    vector3
+    vector3,
+    slidearrow,
+    clock,
+    calender
 };
 
 
@@ -77,7 +96,23 @@ export const images = {
     shopping,
     deal,
     kutan,
-    footwear
+    footwear,
+    offer,
+    offerImage,
+    mac,
+    deal2,
+    watch,
+    sneaker,
+    navy,
+    hot,
+    discount,
+    heels,
+    black,
+    pink,
+    mens,
+    redsneakers,
+    flare,
+    camera
 };
 
 
@@ -102,6 +137,59 @@ export const onboarding = [
     description:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
     image: images.onboarding3,
+  },
+];
+
+export const products = [
+  {
+    id: 1,
+    title: "Black Winter...",
+    description:
+      "Autumn And Winter Casual cotton-padded jacket...",
+    image: images.black,
+    price: '8,000'
+  },
+ 
+  {
+    id: 2,
+    title: "Pink Embroide...",
+    description:
+      "EARTHEN Rose Pink Embroidered Tiered Max...",
+    image: images.pink,
+    price: '16,000'
+  },
+  {
+    id: 5,
+    title: "Flare Dress",
+    description:
+      "Autumn And Winter Casual cotton-padded jacket...",
+    image: images.flare,
+    price: '20,000'
+  },
+  {
+    id: 6,
+    title: "Camera",
+    description:
+      "EARTHEN Rose Pink Embroidered Tiered Max...",
+    image: images.camera,
+    price: '16,000'
+  },
+  {
+    id: 8,
+    title: "Pink Embroide...",
+    description:
+      "EARTHEN Rose Pink Embroidered Tiered Max...",
+    image: images.pink,
+    price: '16,000'
+  },
+ 
+  {
+    id: 10,
+    title: "Flare Dress",
+    description:
+      "Autumn And Winter Casual cotton-padded jacket...",
+    image: images.flare,
+    price: '20,000'
   },
 ];
 
@@ -135,5 +223,6 @@ export const homeImages = [
 
 export const data = {
     onboarding,
-    homeImages
+    homeImages,
+    products
 };

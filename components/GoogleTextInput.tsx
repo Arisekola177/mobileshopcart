@@ -29,6 +29,7 @@ const GoogleTextInput = ({
         value={searchQuery}
         onChangeText={setSearchQuery}
       />
+      <Image source={icons.search} className="w-4 h-4" resizeMode="contain" />
     </View>
   );
 };

@@ -38,10 +38,6 @@ export default function Layout() {
           backgroundColor: "#333333",
           paddingBottom: 0, // ios only
           overflow: "hidden",
-          borderRadius: 10,
-          marginHorizontal: 5,
-          marginBottom: 0,
-          // height: 50,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -80,6 +76,7 @@ export default function Layout() {
           tabBarIcon: ({ focused }) => (
             <TabIcon source={icons.cart} focused={focused} />
           ),
+        
         }}
       />
         <Tabs.Screen

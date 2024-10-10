@@ -1,4 +1,5 @@
-import {  Alert, Image, ScrollView, Text, View } from 'react-native'
+
+import { Alert, Image, ScrollView, Text, View, ActivityIndicator } from 'react-native';
 import { useState } from 'react';
 import { Link, router } from 'expo-router';
 import InputField from '@/components/InputField';
@@ -6,14 +7,13 @@ import { icons, images } from '@/constants';
 import CustomButton from '@/components/CustomButton';
 import OAuth from '@/components/OAuth';
 import ReactNativeModal from 'react-native-modal';
-import { Redirect } from 'expo-router';
-import { useSignUp } from '@clerk/clerk-expo'
+import { useSignUp } from '@clerk/clerk-expo';
 import { fetchAPI } from '@/libs/fetch';
 
 const SignUp = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
+  const [loading, setLoading] = useState(false); // New state for loading spinner
   const [showSuccessModal, setShowSuccessModal] = useState(false);
-
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -42,12 +42,15 @@ const SignUp = () => {
       Alert.alert("Error", err.errors[0].longMessage);
     }
   };
+
   const onPressVerify = async () => {
     if (!isLoaded) return;
+    setLoading(true); // Start loading
     try {
       const completeSignUp = await signUp.attemptEmailAddressVerification({
         code: verification.code,
       });
+
       if (completeSignUp.status === "complete") {
         await fetchAPI("/(api)/user", {
           method: "POST",
@@ -75,14 +78,15 @@ const SignUp = () => {
         error: err.errors[0].longMessage,
         state: "failed",
       });
+    } finally {
+      setLoading(false); // Stop loading after process completes
     }
   };
-
 
   return (
     <ScrollView className="flex-1 bg-white">
       <View className="flex-1 bg-white">
-        <View className="relative w-full h-[100px]">
+        <View className="relative w-full  h-[200px] ">
           <Text className="text-2xl text-black font-JakartaSemiBold absolute bottom-5 left-5">
             Create Your Account
           </Text>
@@ -112,7 +116,9 @@ const SignUp = () => {
             value={form.password}
             onChangeText={(value) => setForm({ ...form, password: value })}
           />
-          <Text className='w-[250px]'>By clicking the <Text className='text-red-500'>Register</Text> button, you agree to the public offer</Text>
+          <Text className='w-[250px]'>
+            By clicking the <Text className='text-red-500'>Register</Text> button, you agree to the public offer
+          </Text>
           <CustomButton
             title="Create Account"
             onPress={onSignUpPress}
@@ -162,8 +168,12 @@ const SignUp = () => {
               onPress={onPressVerify}
               className="mt-5 bg-success-500"
             />
+            {loading && ( // Show the spinner when loading
+              <ActivityIndicator size="large" color="#00ff00" className="mt-5" />
+            )}
           </View>
         </ReactNativeModal>
+
         <ReactNativeModal isVisible={showSuccessModal}>
           <View className="bg-white px-7 py-9 rounded-2xl min-h-[300px]">
             <Image
@@ -176,23 +186,20 @@ const SignUp = () => {
             <Text className="text-base text-gray-400 font-Jakarta text-center mt-2">
               You have successfully verified your account.
             </Text>
-          <CustomButton
-             title="Click to continue"
-             onPress={() => {
-                setShowSuccessModal(false); 
-                 router.push('/(root)/started'); 
+            <CustomButton
+              title="Click to continue"
+              onPress={() => {
+                setShowSuccessModal(false);
+                router.push('/(root)/started');
               }}
-           className="mt-5"
-/>
+              className="mt-5"
+            />
           </View>
         </ReactNativeModal>
-    
-
       </View>
     </ScrollView>
   );
 };
 export default SignUp;
-
 
 

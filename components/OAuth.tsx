@@ -24,25 +24,25 @@ const OAuth = () => {
       <View className="flex justify-center items-center mt-4 gap-x-3">
         
         <View className="flex-1 h-[1px] bg-red-500" />
-        <Text className="text-lg font-JakartaSemiBold">OR Continue With</Text>
+        <Text className="text-lg font-JakartaSemiBold"> Continue With</Text>
         <View className="flex-1 h-[1px] bg-red-500" />
 
         <View className="flex flex-row py-6 items-center justify-center gap-2">
-            <View className="rounded-full flex items-center justify-center p-2 border-red-500 border-[1px]">
+            <View className="rounded-full w-12 h-12 flex items-center justify-center p-2 border-red-500 border-[1px]">
             <Image
              source={icons.google}
            resizeMode="contain"
          className="w-5 h-5 mx-2"
 />
             </View>
-            <View className="rounded-full flex items-center justify-center p-2 border-red-500 border-[1px]">
+            <View className="rounded-full w-12 h-12  flex items-center justify-center p-2 border-red-500 border-[1px]">
             <Image
 source={icons.google}
 resizeMode="contain"
 className="w-5 h-5 mx-2"
 />
             </View>
-            <View className="rounded-full flex items-center justify-center p-2 border-red-500 border-[1px]">
+            <View className="rounded-full w-12 h-12 flex items-center justify-center p-2 border-red-500 border-[1px]">
             <Image
 source={icons.google}
 resizeMode="contain"
