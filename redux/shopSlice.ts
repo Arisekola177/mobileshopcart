@@ -3,15 +3,24 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface Product {
   id: string;
-  name: string;
+  title: string;
+  brand: string;
+  category: string;
+  description: string;
   quantity: number;
-  selectedImage: { colorCode: string }; 
+  price: number;
+  image: string ; 
 }
 
 interface WishlistItem {
   id: string;
-  name: string;
+  title: string;
+  brand: string;
+  category: string;
+  description: string;
   quantity: number;
+  price: number;
+  image: string ; 
 }
 
 interface ShopState {
@@ -31,7 +40,7 @@ export const shopSlice = createSlice({
     addToCart: (state, action: PayloadAction<Product>) => {
       const newItem = action.payload;
       const existingItem = state.productData.find(
-        (item) => item.id === newItem.id && item.selectedImage.colorCode === newItem.selectedImage.colorCode
+        (item) => item.id === newItem.id
       );
       if (existingItem) {
         existingItem.quantity += newItem.quantity;

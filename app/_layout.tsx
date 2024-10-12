@@ -7,6 +7,11 @@ import 'react-native-reanimated';
 import { ClerkProvider, ClerkLoaded } from '@clerk/clerk-expo'
 import { tokenCache } from '@/libs/auth';
 import { LogBox } from "react-native";
+import {Provider} from 'react-redux'
+import { persistor, store } from '../redux/store'; 
+import { PersistGate } from "redux-persist/integration/react";
+import Toast from 'react-native-toast-message';
+
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!
 
@@ -42,15 +47,24 @@ LogBox.ignoreLogs(["Clerk:"]);
   }
 
   return (
+  
+     <>
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
       <ClerkLoaded>
+      <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen name="(auth)" options={{ headerShown: false }} />
           <Stack.Screen name="(root)" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
         </Stack>
+        </PersistGate>
+         </Provider>
+ 
         </ClerkLoaded>
         </ClerkProvider>
+        <Toast />
+        </>
   );
 }

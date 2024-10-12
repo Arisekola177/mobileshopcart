@@ -18,6 +18,7 @@ import hamburger from "@/assets/icons/hamburger.png";
 import user from "@/assets/icons/user.png";
 import cart from "@/assets/icons/cart.png";
 import settings from "@/assets/icons/settings.png";
+import imagechange from "@/assets/icons/imagechange.png";
 import star from "@/assets/icons/star.png";
 import check from "@/assets/images/check.png";
 import icon from "@/assets/images/icon.png";
@@ -48,12 +49,16 @@ import discount from "@/assets/images/discount.png"
 import heels from "@/assets/images/heels.png"
 import clock from "@/assets/icons/clock.png";
 import calender from "@/assets/icons/calender.png";
+import bag from "@/assets/icons/bag.png";
 import black  from "@/assets/images/Black Winter.png"
 import mens from "@/assets/images/Mens Starry.png"
 import pink from "@/assets/images/Pink Embroide.png"
 import redsneakers from "@/assets/images/redsneakers.png"
 import camera from "@/assets/images/camera.png"
 import flare from "@/assets/images/Flare Dress.png"
+
+
+
 export const icons = {
     backArrow,
     checkmark,
@@ -77,7 +82,9 @@ export const icons = {
     vector3,
     slidearrow,
     clock,
-    calender
+    calender,
+    bag,
+    imagechange
 };
 
 
@@ -112,9 +119,60 @@ export const images = {
     mens,
     redsneakers,
     flare,
-    camera
+    camera,
+    noResult
 };
 
+export const homeproduct = [
+  {
+    id: 1,
+    title: "Women Printed Kurta",
+    image: images.kutan,
+    brand: 'Designer',
+    category: 'Women',
+    price: 16000,
+    oldPrice: 21000,
+    quantity: 1,
+    desc: 'Neque porro quisquam est qui dolorem ipsum quia'
+  },
+  {
+    id: 2,
+    title: "HRX by Hrithik Roshan",
+    image: images.footwear,
+    brand: 'Designer',
+    category: 'Men',
+    price: 50000,
+    oldPrice:100000, 
+    quantity: 1,
+    desc: 'Neque porro quisquam est qui dolorem ipsum quia'  
+  },
+ 
+];
+
+export const trending = [
+  {
+    id: 1,
+    title: "IWC Schaffhausen 2021 Pilot's Watch SIHH 2019 44mm",
+    image: images.watch,
+    brand: 'Designer',
+    category: 'Men',
+    price: 30000,
+    oldPrice: 50000,
+    quantity: 1,
+    
+  },
+  {
+    id: 2,
+    title: "Labbin White Sneakers For Men and Female ",
+    image: images.sneaker,
+    brand: 'Designer',
+    category: 'Men',
+    price: 80000,
+    oldPrice:120000, 
+    quantity: 1,
+  },
+ 
+];
 
 export const onboarding = [
   {
@@ -144,54 +202,65 @@ export const products = [
   {
     id: 1,
     title: "Black Winter...",
-    description:
-      "Autumn And Winter Casual cotton-padded jacket...",
     image: images.black,
-    price: '8,000'
+    brand: 'Designer',
+    category: 'Men',
+    price: 8000,
+    quantity: 1,
+    desc: 'Perhaps the most iconic sneaker of all-time, this original "Chicago"? colorway is the cornerstone to any sneaker collection. Made famous in 1985 by Michael Jordan, the shoe has stood the test of time, becoming the most famous colorway of the Air Jordan 1. This 2015 release saw the ...More'
   },
- 
   {
     id: 2,
     title: "Pink Embroide...",
-    description:
-      "EARTHEN Rose Pink Embroidered Tiered Max...",
     image: images.pink,
-    price: '16,000'
+    brand: 'Designer',
+    category: 'Women',
+    price: 16000,
+    quantity: 1,
+    desc: 'Perhaps the most iconic sneaker of all-time, this original "Chicago"? colorway is the cornerstone to any sneaker collection. Made famous in 1985 by Michael Jordan, the shoe has stood the test of time, becoming the most famous colorway of the Air Jordan 1. This 2015 release saw the ...More'  // updated to a number
   },
   {
     id: 5,
     title: "Flare Dress",
-    description:
-      "Autumn And Winter Casual cotton-padded jacket...",
     image: images.flare,
-    price: '20,000'
+    brand: 'Designer',
+    category: 'Women',
+    price: 20000 ,
+    quantity: 1,
+    desc: 'Perhaps the most iconic sneaker of all-time, this original "Chicago"? colorway is the cornerstone to any sneaker collection. Made famous in 1985 by Michael Jordan, the shoe has stood the test of time, becoming the most famous colorway of the Air Jordan 1. This 2015 release saw the ...More' // updated to a number
   },
   {
     id: 6,
     title: "Camera",
-    description:
-      "EARTHEN Rose Pink Embroidered Tiered Max...",
     image: images.camera,
-    price: '16,000'
+    brand: 'Nikkon',
+    category: 'Camera',
+    price: 16000,
+    quantity: 1, 
+    desc: 'Perhaps the most iconic sneaker of all-time, this original "Chicago"? colorway is the cornerstone to any sneaker collection. Made famous in 1985 by Michael Jordan, the shoe has stood the test of time, becoming the most famous colorway of the Air Jordan 1. This 2015 release saw the ...More' // updated to a number
   },
   {
     id: 8,
     title: "Pink Embroide...",
-    description:
-      "EARTHEN Rose Pink Embroidered Tiered Max...",
     image: images.pink,
-    price: '16,000'
+    brand: 'Designer',
+    category: 'Women',
+    price: 16000,
+    quantity: 1,
+    desc: 'Perhaps the most iconic sneaker of all-time, this original "Chicago"? colorway is the cornerstone to any sneaker collection. Made famous in 1985 by Michael Jordan, the shoe has stood the test of time, becoming the most famous colorway of the Air Jordan 1. This 2015 release saw the ...More'  // updated to a number
   },
- 
   {
     id: 10,
     title: "Flare Dress",
-    description:
-      "Autumn And Winter Casual cotton-padded jacket...",
     image: images.flare,
-    price: '20,000'
+    brand: 'Designer',
+    category: 'Women',
+    price: 20000,
+    quantity: 1, 
+    desc: 'Perhaps the most iconic sneaker of all-time, this original "Chicago"? colorway is the cornerstone to any sneaker collection. Made famous in 1985 by Michael Jordan, the shoe has stood the test of time, becoming the most famous colorway of the Air Jordan 1. This 2015 release saw the ...More' // updated to a number
   },
 ];
+
 
 export const homeImages = [
   {

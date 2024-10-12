@@ -5,22 +5,15 @@ import { homeImages, icons, images } from '@/constants';
 import GoogleTextInput from '@/components/GoogleTextInput';
 import Product from '@/components/Product';
 import Trending from '@/components/Trending';
+import Topbar from '@/components/Topbar';
 
 const Home = () => {
   return (
     <SafeAreaView className='flex-1'>
       <ScrollView className='flex-1'> 
-        <View className='flex flex-row items-center justify-between p-2'>
-          <View>
-            <Image source={icons.hamburger} resizeMode='contain' />
-          </View>
-          <View>
-            <Image source={images.icon} className='w-[100px] h-[32px]' resizeMode='contain' />
-          </View>
-          <View>
-            <Image source={icons.user} resizeMode='contain' />
-          </View>
-        </View>
+         <View className='p-2'>
+            <Topbar />
+         </View>
         <View className='p-2'>
           <GoogleTextInput 
             containerStyle="bg-neutral-100"
@@ -53,7 +46,7 @@ const Home = () => {
         </View>
         <View className='flex items-center w-full justify-center mt-2'>
           <View className='relative '>
-            <Image source={images.shopping} className='w-[400px]' resizeMode='cover' /> 
+            <Image source={images.shopping} className='w-[343px]' resizeMode='cover' /> 
             <View className='flex absolute bottom-24 px-4 '>
               <Text className='text-white font-JakartaExtraBold text-xl'>50-40% OFF</Text>
               <Text className='text-white font-JakartaExtraLight'>Now in (product)</Text> 
@@ -131,7 +124,7 @@ const Home = () => {
          <View className='mt-2 flex items-center justify-center'>
              <Trending />
              <View className='mt-8 mb-4'>
-             <Image source={images.hot}  className='w-[400px]' resizeMode='cover' />
+             <Image source={images.hot}  className='w-[340px]' resizeMode='cover' />
               <View className=' p-1 flex flex-row items-center justify-between rounded-md'>
            <View className='flex gap-1'>
                <Text className='text-base font-JakartaBold'>New Arrivals </Text> 
@@ -146,7 +139,7 @@ const Home = () => {
              </View>
              <View className='mt-4  flex items-start justify-center gap-1'>
               <Text className='mb-3 font-JakartaBold text-base '>Sponsored</Text>
-             <Image source={images.discount} className='w-[400px]'   resizeMode='cover' />
+             <Image source={images.discount} className='w-[340px]'   resizeMode='cover' />
              <Text className='mb-3 font-JakartaBold text-lg '>Up to 50% off</Text>
              </View>
          </View>

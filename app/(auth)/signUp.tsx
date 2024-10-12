@@ -12,7 +12,7 @@ import { fetchAPI } from '@/libs/fetch';
 
 const SignUp = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
-  const [loading, setLoading] = useState(false); // New state for loading spinner
+  const [loading, setLoading] = useState(false); 
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -45,7 +45,7 @@ const SignUp = () => {
 
   const onPressVerify = async () => {
     if (!isLoaded) return;
-    setLoading(true); // Start loading
+    setLoading(true); 
     try {
       const completeSignUp = await signUp.attemptEmailAddressVerification({
         code: verification.code,
@@ -79,7 +79,7 @@ const SignUp = () => {
         state: "failed",
       });
     } finally {
-      setLoading(false); // Stop loading after process completes
+      setLoading(false); 
     }
   };
 
@@ -168,7 +168,7 @@ const SignUp = () => {
               onPress={onPressVerify}
               className="mt-5 bg-success-500"
             />
-            {loading && ( // Show the spinner when loading
+            {loading && ( 
               <ActivityIndicator size="large" color="#00ff00" className="mt-5" />
             )}
           </View>

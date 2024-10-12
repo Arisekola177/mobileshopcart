@@ -33,17 +33,24 @@ export default function Layout() {
       screenOptions={{
         tabBarActiveTintColor: "white",
         tabBarInactiveTintColor: "#FF0000",
-        tabBarShowLabel: false,
+        tabBarShowLabel: true,
         tabBarStyle: {
           backgroundColor: "#333333",
           paddingBottom: 0, // ios only
+          padding: 20,
+          height: 60,
           overflow: "hidden",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           flexDirection: "row",
         },
-      
+        tabBarLabelStyle: {
+          fontSize: 12, 
+          fontWeight: "bold", 
+          color: "white", 
+          marginVertical: 10,
+        },
       }}
     >
       <Tabs.Screen
@@ -59,12 +66,12 @@ export default function Layout() {
       
       />
        <Tabs.Screen
-        name="wishlist"
+        name="shop"
         options={{
-          title: "Wishlist",
+          title: "Shop",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon source={icons.heart} focused={focused} />
+            <TabIcon source={icons.bag} focused={focused} />
           ),
         }}
       />
@@ -90,9 +97,9 @@ export default function Layout() {
         }}
       />
       <Tabs.Screen
-        name="settings"
+        name="profile"
         options={{
-          title: "Settings",
+          title: "Profile",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <TabIcon source={icons.settings} focused={focused} />
